@@ -1,0 +1,13 @@
+# Ignore IntelliJ project files
+.idea/
+*.iml
+
+# Ignore build files
+**/target/
+**/build/
+
+# Ignore node_modules from frontend
+To-Do_List_FE/node_modules/
+
+# Ignore environment or config files
+*.env

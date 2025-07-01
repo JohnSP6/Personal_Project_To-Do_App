@@ -30,7 +30,7 @@ public class CheckListController {
     }
 
     @PostMapping
-    public ResponseEntity<CheckList> createCheckList(CheckList checkList){
+    public ResponseEntity<CheckList> createCheckList(@RequestBody CheckList checkList){
         CheckList createdCheckList = checkListService.createChekList(checkList);
         return ResponseEntity.ok(createdCheckList);
     }
@@ -38,7 +38,7 @@ public class CheckListController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCheckListById(@PathVariable String id){
         checkListService.deleteCheckList(id);
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.noContent().build();
     }
 
 }

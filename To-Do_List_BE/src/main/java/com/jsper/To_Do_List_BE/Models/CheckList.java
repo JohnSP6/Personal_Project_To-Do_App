@@ -8,16 +8,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Data
-@Document(collection = "users")
-public class User {
+@Document(collection = "checkLists")
+public class CheckList {
 
     @Id
     private String id;
 
-    @Indexed(unique = true)
-    private String username;
+    @Indexed
+    private String userId;
 
-    private String password;
+    private String checkListName;
+    private String checkListDesc;
+    private CheckListItem[] checkListItems;
+    private Recurrence recurrence;
     private LocalDateTime createdDate;
-
 }

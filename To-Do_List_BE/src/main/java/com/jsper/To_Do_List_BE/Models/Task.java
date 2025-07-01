@@ -8,16 +8,27 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Data
-@Document(collection = "users")
-public class User {
+@Document(collection = "tasks")
+public class Task {
 
     @Id
     private String id;
 
-    @Indexed(unique = true)
-    private String username;
+    @Indexed
+    private String userId;
 
-    private String password;
+    private String taskName;
+    private String taskDesc;
+
+    @Indexed
+    private int priority;
+
+    private Recurrence recurrence;
+    private String[] tags;
+
+    @Indexed
+    private String taskStatus;
+
     private LocalDateTime createdDate;
 
 }
